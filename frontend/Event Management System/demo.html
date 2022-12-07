@@ -1,0 +1,755 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.0/font/bootstrap-icons.css">
+
+    <header>
+        <style>
+            body {
+                background-image: linear-gradient(to right, #f0cd08e7, #E91E63)
+            }
+            
+            .section {
+                position: relative;
+                height: 100vh
+            }
+            
+            .section .section-center {
+                position: absolute;
+                top: 50%;
+                left: 0;
+                right: 0;
+                -webkit-transform: translateY(-50%);
+                transform: translateY(-50%)
+            }
+            
+            #booking {
+                font-family: 'Raleway', sans-serif
+            }
+            
+            .booking-form {
+                position: relative;
+                max-width: 642px;
+                width: 100%;
+                margin: auto;
+                padding: 40px;
+                overflow: hidden;
+                background-image: url('https://i.imgur.com/8z1tx3u.jpg');
+                background-size: cover;
+                border-radius: 5px;
+                z-index: 20
+            }
+            
+            .booking-form::before {
+                content: '';
+                position: absolute;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                top: 0;
+                background: rgba(16, 3, 32, 0.432);
+                z-index: -1
+            }
+            
+            .booking-form .form-header {
+                text-align: center;
+                position: relative;
+                margin-bottom: 30px
+            }
+            
+            .booking-form .form-header h1 {
+                font-weight: 700;
+                text-transform: capitalize;
+                font-size: 42px;
+                margin: 0px;
+                color: #fff
+            }
+            
+            .booking-form .form-group {
+                position: relative;
+                margin-bottom: 30px
+            }
+            
+            .booking-form .form-control {
+                background-color: rgba(255, 255, 255, 0.2);
+                height: 60px;
+                padding: 0px 25px;
+                border: none;
+                border-radius: 40px;
+                color: #fff;
+                -webkit-box-shadow: 0px 0px 0px 2px transparent;
+                box-shadow: 0px 0px 0px 2px transparent;
+                -webkit-transition: 0.2s;
+                transition: 0.2s
+            }
+            
+            .booking-form .form-control::-webkit-input-placeholder {
+                color: rgba(255, 255, 255, 0.5)
+            }
+            
+            .booking-form .form-control:-ms-input-placeholder {
+                color: rgba(255, 255, 255, 0.5)
+            }
+            
+            .booking-form .form-control::placeholder {
+                color: rgba(255, 255, 255, 0.5)
+            }
+            
+            .booking-form .form-control:focus {
+                -webkit-box-shadow: 0px 0px 0px 2px #ff8846;
+                box-shadow: 0px 0px 0px 2px #ff8846
+            }
+            
+            .booking-form input[type="date"].form-control {
+                padding-top: 16px
+            }
+            
+            .booking-form input[type="date"].form-control:invalid {
+                color: rgba(255, 255, 255, 0.5)
+            }
+            
+            .booking-form input[type="date"].form-control+.form-label {
+                opacity: 1;
+                top: 10px
+            }
+            
+            .booking-form select.form-control {
+                -webkit-appearance: none;
+                -moz-appearance: none;
+                appearance: none
+            }
+            
+            .booking-form select.form-control:invalid {
+                color: rgba(255, 255, 255, 0.5)
+            }
+            
+            .booking-form select.form-control+.select-arrow {
+                position: absolute;
+                right: 15px;
+                top: 50%;
+                -webkit-transform: translateY(-50%);
+                transform: translateY(-50%);
+                width: 32px;
+                line-height: 32px;
+                height: 32px;
+                text-align: center;
+                pointer-events: none;
+                color: rgba(255, 255, 255, 0.5);
+                font-size: 14px
+            }
+            
+            .booking-form select.form-control+.select-arrow:after {
+                content: '\279C';
+                display: block;
+                -webkit-transform: rotate(90deg);
+                transform: rotate(90deg)
+            }
+            
+            .booking-form select.form-control option {
+                color: #000
+            }
+            
+            .booking-form .form-label {
+                position: absolute;
+                top: -10px;
+                left: 25px;
+                opacity: 0;
+                color: #ff8846;
+                font-size: 11px;
+                font-weight: 700;
+                text-transform: uppercase;
+                letter-spacing: 1.3px;
+                height: 15px;
+                line-height: 15px;
+                -webkit-transition: 0.2s all;
+                transition: 0.2s all
+            }
+            
+            .booking-form .form-group.input-not-empty .form-control {
+                padding-top: 16px
+            }
+            
+            .booking-form .form-group.input-not-empty .form-label {
+                opacity: 1;
+                top: 10px
+            }
+            
+            .booking-form .submit-btn {
+                color: #fff;
+                background-color: #e35e0a;
+                font-weight: 700;
+                height: 60px;
+                padding: 10px 30px;
+                width: 100%;
+                border-radius: 40px;
+                border: none;
+                text-transform: uppercase;
+                font-size: 16px;
+                letter-spacing: 1.3px;
+                -webkit-transition: 0.2s all;
+                transition: 0.2s all
+            }
+            
+            .booking-form .submit-btn:hover,
+            .booking-form .submit-btn:focus {
+                opacity: 0.9
+            }
+            
+            #menu {
+                padding-left: 15px;
+                padding-right: 10px;
+                color: white;
+            }
+            
+            #menu:hover {
+                background-color: rgb(12, 106, 182);
+                margin: 1px;
+                color: yellow;
+                border-radius: 10px 5px 10px 5px;
+            }
+            /* Carousel styling */
+            
+            #introCarousel,
+            .carousel-inner,
+            .carousel-item,
+            .carousel-item.active {
+                height: 80vh;
+            }
+            
+            #icon:hover {
+                color: red;
+            }
+            
+            .carousel-item:nth-child(1) {
+                background-image: url('https://monetevents.co.uk/wp-content/uploads/2019/10/monet-events-bespoke-corporate-wedding-private-event-planning-planner-styling-essex-london-suffolk-cover-home-slide-3-2600x1200_c.jpg');
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: center center;
+            }
+            
+            .carousel-item:nth-child(2) {
+                background-image: url('https://mdbootstrap.com/img/Photos/Others/images/77.jpg');
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: center center;
+            }
+            
+            .carousel-item:nth-child(3) {
+                background-image: url('https://mdbootstrap.com/img/Photos/Others/images/78.jpg');
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: center center;
+            }
+            /* Height for devices larger than 576px */
+            
+            @media (min-width: 992px) {
+                #introCarousel {
+                    margin-top: -58.59px;
+                }
+            }
+            
+            .navbar .nav-link {
+                color: #fff !important;
+            }
+        </style>
+
+        <!-- Navbar -->
+        <div class="row ">
+            <div class="col-md-2 ml-5 mt-2">
+                <!-- <img src="./image/colo.png" alt="" width="80%"> -->
+            </div>
+            <div class="col-md-9 mt-3">
+                <nav class="navbar navbar-expand-lg ">
+
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+
+                        <div class="collapse navbar-collapse" id="navbarExample01">
+                            <ul class="navbar-nav mr-md-auto mb-2 mb-lg-0">
+                                <li class="nav-item active">
+                                    <h5><a class="nav-link" aria-current="page" id="menu" href="#home">HOME</a></h5>
+                                </li>
+                                <li class="nav-item">
+                                    <h5> <a class="nav-link" id="menu" href="#about">ABOUT US</a></h5>
+                                </li>
+                                <li class="nav-item">
+                                    <h5><a class="nav-link" id="menu" href="#pack">EVENT PACKAGES</a></h5>
+                                </li>
+                                <li class="nav-item">
+                                    <h5><a class="nav-link" id="menu" href="#book">BOOK EVENTS</a></h5>
+                                </li>
+                            </ul>
+                            <form class="form-inline">
+
+                                <button class="btn btn-warning  " type="submit">SIGN IN</button>
+                            </form>
+                        </div>
+                </nav>
+                </div>
+            </div> <br> <br> <br>
+            <!-- Navbar -->
+
+            <!-- Carousel wrapper -->
+            <div id="introCarousel" class="carousel slide carousel-fade shadow-2-strong w-100 h-50" data-mdb-ride="carousel">
+                <!-- Indicators -->
+
+
+
+                <!-- Inner -->
+                <div class="carousel-inner">
+                    <!-- Single item -->
+                    <div class="carousel-item active">
+
+                    </div>
+
+
+
+
+                </div>
+                <!-- Inner -->
+
+                <!-- Controls -->
+
+            </div>
+            <!-- Carousel wrapper -->
+    </header>
+
+
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+    <!--Main Navigation-->
+
+    <!--Main Navigation-->
+
+
+    <div class="container" id="about">
+        <div class="row pt-4">
+            <div class="col-md-7">
+                <h1 style="font-size: 3rem;font-weight: bold;font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">A family united - We make your moments special <br>
+                    <hr style="height:1rem ;background-color:rgb(253, 34, 5);width: 50%;">
+                </h1>
+                <p style="    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;font-size: 20px;font-weight: bold;">More human events So long, event management software. With our Event Experience Operating System, you can deliver more engaging, human, and impactful experiences for a truly seamless hybrid experience. It’s a data-driven open platform
+                    that allows Event Experience Leaders to manage events, engage audiences,<mark style="background:yellow"> grow communities </mark> and <mark style="background:yellow">deliver powerful business outcomes</mark>
+
+            </div>
+            <div class="col-md-3 offset-1">
+                <img style="height: 20rem;" src="./image/space1.png" alt="">
+
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row mt-4">
+                <div class="col-md-3 pr-5">
+                    <img style="height: 20rem;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRe-PrEFX2XJmAE0LIl-tVwGQKz-eRwCfwnmw&usqp=CAU">
+                </div>
+                <div class="col-md-8" style="padding-left: 15rem;">
+                    <h1 style="font-size: 3rem;font-weight: bold;font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">Your Achievements </h1>
+                    <h1 style="font-size: 3rem;font-weight: bold;font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">Our Celebrations<br>
+                        <hr style="height:1rem ;background-color:rgb(253, 34, 5);width: 50%;">
+                    </h1>
+                    <p style="    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;font-size: 20px;font-weight: bold;">
+                        Eventio is a platform that can assist with booking equipment and specialized technicians for events. They’re very hands-on with communication, emphasizing their passion for face to face meetings. When we think of event geeks who know their stuff, we think
+                        Endless Events. <br>
+
+
+                    </p>
+
+
+                </div>
+            </div>
+        </div>
+
+
+        <!--Main layout-->
+        <main class="mt-3" id="pack">
+            <div class="container">
+
+
+
+
+
+
+
+                <!--Section: Content-->
+
+                <hr class="my-5" />
+
+                <!--Section: Content-->
+                <section class="text-center">
+                    <h4 class="mb-3" style="font-style:serif"><strong>Our Deals</strong></h4>
+
+                    <div class="row">
+                        <div class="col-lg-4 col-md-12 mb-4">
+                            <div class="card">
+                                <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+                                    <img src="https://www.partyplanetindia.com/images/gallery/baby-showers/big-img/9.jpg" class="img-fluid w-100 h-100" />
+                                    <a href="#!">
+                                        <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                                    </a>
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title text-danger">Birthday </h5>
+                                    <p class="card-text">
+                                        <h6> Sample menu for Dinner or Lunch party buffet:</h6><br>
+                                        <ul style="list-style-type:square">
+                                            <li>Any aerated drink or Fruit punch for welcome drink.</li>
+                                            <li>Tomato soup/Sweet corn soup</li>
+                                            <li>French fries or aloo tikki or kabab with tomato sauce/</li>
+                                            <li>green chutney.</li>
+                                            <li>Gobi manchurian.</li>
+                                            <li>Roti / Naan / Kulcha.</li>
+                                            <li>Paneer butter masala or Mixed veg gravy.</li>
+                                            <li>Dal tadka.</li>
+                                            <li style="color: red;"><b></b>Expected Prize:Rs.450/person</li>
+                                        </ul>
+
+                                        </li>
+
+                                    </p>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-6 mb-4">
+                            <div class="card" style="height: 40rem;">
+                                <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+                                    <img src="data:image/jpeg;base64,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"
+                                        class="img-fluid w-100" style="height: 11.5rem;" />
+                                    <a href="#!">
+                                        <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                                    </a>
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title text-success">Wedding Celebration</h5>
+                                    <p class="card-text">
+                                        <h6> Sample menu for wedding events(south indian) :</h6>
+                                        <ul style="list-style-type: square;">
+                                            <li> Rice </li>
+                                            <li> Sambhar</li>
+                                            <li> Aviyal </li>
+                                            <li> Kootu</li>
+                                            <li> Rasam </li>
+                                            <li> Poriyal </li>
+                                            <li> Appalam </li>
+                                            <li> Vadai </li>
+                                            <li> Curry </li>
+                                            <li>Vegetable Biryani</li>
+                                            <li>Vaththa Kozambhu</li>
+                                            <li>Sweets</li>
+                                            <li>Thayir Pachadi</li>
+                                            <li style="color: red;"><b></b>Expected Prize:Rs.550/person</li>
+                                        </ul>
+                                        </li>
+                                    </p>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-6 mb-4">
+                            <div class="card" style="height: 40rem;">
+                                <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+                                    <img src="https://media-exp1.licdn.com/dms/image/C4D1BAQFxaDfKRkxqlA/company-background_10000/0/1622725485570?e=2159024400&v=beta&t=Hr9H2fWe21ucxVKQJ6o-3OaXiy2Ak_ES_q2oQeTk2N4" class="img-fluid w-100 " style="height:11.5rem" />
+                                    <a href="#!">
+                                        <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                                    </a>
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title text-warning">Award Ceremony</h5>
+                                    <p class="card-text">
+                                        <h6> Sample menu for award functions</h6>
+                                        <ul style="list-style-type: square;">
+
+                                            <li> Briyani</li>
+                                            <li> Butter chicken </li>
+                                            <li> Palak paneer</li>
+                                            <li> Fruit salad</li>
+                                            <li> Chapathi</li>
+                                            <li> Poori </li>
+                                            <li> Aloo parota</li>
+                                            <li>Veg spring roll</li>
+                                            <li>Salt and Pepper fish</li>
+                                            <li>Paneer Cutlet</li>
+                                            <li>Veg Frenkie</li>
+                                            <li>Finger Chips</li>
+                                            <li>Chilly Garlic Bread</li>
+                                            <li>Chilly Chicken</li>
+                                            <li style="color: red;"><b></b>Expected Prize:Rs.650/person</li>
+                                        </ul>
+                                        </li>
+                                    </p>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </section>
+                <!--Section: Content-->
+
+                <br>
+                <div class="row ">
+
+                    <div class="container text-center">
+                        <h1 class="mt-5 font-weight-bolder"><b>BUSINESS CATEGORY</b></h1>
+                    </div>
+                </div>
+                <div class="row mt-4">
+                    <div class="col-md-2 ml-4">
+                        <div class="card" style="width: 18rem; height: 12rem;background-image: linear-gradient(to right, #f0cd08e7, #E91E63)">
+                            <img class="card-img-top" src="./image/card1.png" style="width: 6rem;margin-left:5rem ; ">
+                            <div class="card-body">
+                                <p class="card-text ml-3">
+                                    <p style="text-align: center;">ONLINE <br> REGISTRATION</p>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2 ml-4">
+                        <div class="card " style="width: 18rem; height: 12rem;background-image: linear-gradient(to right, #f0cd08e7, #E91E63)">
+                            <img class="card-img-top" src="./image/card3.jpg" style="width: 8rem;margin-left:5rem;height:5.5rem;">
+                            <div class="card-body">
+                                <p class="card-text ml-3">
+                                    <p style="text-align: center;">SMS <br> NOTIFICATIONS</p>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2 ml-4">
+                        <div class="card " style="width: 18rem; height: 12rem;background-image: linear-gradient(to right, #f0cd08e7, #E91E63)">
+                            <img class="card-img-top" src="./image/card4.png" style="width: 6rem;margin-left:5rem">
+                            <div class="card-body">
+                                <p class="card-text ml-3">
+                                    <p style="text-align: center;">PAST <br> EVENTS</p>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2 ml-4">
+                        <div class="card " style="width: 18rem; height: 12rem;background-image: linear-gradient(to right, #f0cd08e7, #E91E63)">
+                            <img class="card-img-top" src="./image/card2.png" style="width: 6rem;margin-left:5rem">
+                            <div class="card-body">
+                                <p class="card-text ml-3">
+                                    <p style="text-align: center;">SURVEYS & <br>CHATS </p>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-1 ml-4">
+                        <div class="card " style="width: 18rem; height: 12rem;background-image: linear-gradient(to right, #f0cd08e7, #E91E63)">
+                            <img class="card-img-top" src="./image/card5.png" style="width: 8rem;margin-left:5rem;height:5.5rem;">
+                            <div class="card-body">
+                                <p class="card-text ml-3">
+                                    <p style="text-align: center;">BOOKING OF <br> EVENTS</p>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Section: Content-->
+                <section id="book" class=" col-7 offset-4 bg-warning text-dark p-3" style="background-image: url(./image/pic3.jpg) ; background-size: cover; margin-left: 15rem; margin-top: 3rem;">
+                    <div id="booking" class="section">
+                        <div class="section-center">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="booking-form">
+                                        <div class="form-header">
+                                            <h1>BOOK YOUR EVENTS</h1>
+                                        </div>
+                                        <form>
+                                            <div class="form-group"> <input class="form-control" type="text" placeholder="Country, ZIP, city..."> <span class="form-label">Destination</span> </div>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="form-group"> <input class="form-control" type="date" required> <span class="form-label">Event Commence</span> </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-group"> <input class="form-control" type="date" required> <span class="form-label">Event End</span> </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="form-group"> <select class="form-control" required>
+                                                <option value="" selected hidden>No.of.Peoples</option>
+                                                <option>1</option>
+                                                <option>2</option>
+                                                <option>3</option>
+                                            </select> <span class="select-arrow"></span> <span class="form-label">Rooms</span> </div>
+                                                </div>
+                                                <div class="col-md-6 ">
+                                                    <div class="form-group"> <select class="form-control" required>
+                                                <option value="" selected hidden>Palette Choosen</option>
+                                                <option>Palette 1</option>
+                                                <option>Palette 2</option>
+                                                <option>Palette 3</option>
+                                            </select> <span class="select-arrow"></span> <span class="form-label">Adults</span> </div>
+                                                </div>
+                                                <!-- <div class="col-md-4">
+                                        <div class="form-group"> <select class="form-control" required>
+                                                <option value="" selected hidden>no of children</option>
+                                                <option>0</option>
+                                                <option>1</option>
+                                                <option>2</option>
+                                            </select> <span class="select-arrow"></span> <span class="form-label">Children</span> </div>
+                                    </div> -->
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="form-group"> <input class="form-control" type="email" placeholder="Enter your Email"> <span class="form-label">Email</span> </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-group"> <input class="form-control" type="tel" placeholder="Enter you Phone"> <span class="form-label">Phone</span> </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-btn"> <button class="submit-btn">Book Now</button> </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </section>
+                <!--Section: Content-->
+            </div>
+        </main>
+
+
+        <script>
+            window.onload(document.getElementById("valid1").style.display = "none");
+
+            function pal() {
+                var s1 = document.getElementById("option1").checked;
+                var s2 = document.getElementById("option2").checked;
+                var s3 = document.getElementById("option3").checked;
+
+                if (s1 == 'true') {
+                    document.getElementById("valid1").style.display = "inline";
+                    document.getElementById("valid1").innerHTML = "The selected package cost Rs.10,000"
+                }
+            }
+        </script>
+
+
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+
+</html>
+
+<div class="col-md-7 b" style="background-image: url(./image/fren.jpg); ">
+    <h4 class="text-white font-weight-bolder text-center mt-3">OUR BRANCHES</h5>
+        <div class="text-center">
+            <small class="text-danger " style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Find your nearest branches</small>
+        </div>
+        <form action="">
+            <div class="form-group col-md-12">
+
+                <!-- <label for="inputState" class="text-white">State</label> -->
+                <select id="inputState" class="form-control  border border-rounded rounded-pill mt-4">
+                  <option selected >Select State</option>
+                  <option>Tamilnadu</option>
+                  <option>Kerala</option>
+                  <option>Karnataka</option>
+                </select>
+
+            </div>
+        </form>
+        <div class="text-center ">
+            <button type="button" class="btn btn-danger border border-danger rounded-pill text-dark"><small>Search</small></button>
+        </div>
+        <hr style="color: white;width:50%;text-align:left;margin-left:0;">
+        <div class="row col-md-12">
+            <img src="./image/fssai.png" alt="" width="20%" class="ml-5">
+            <!-- <p>jjjjkkk</p> -->
+            <img src="./image/iso-og.png" alt="" width="20%" class="ml-5">
+            <img src="./image/brc.png" alt="" width=20% class="ml-5">
+        </div>
+</div>
+</div>
+</div>
+<div class="ml-5 col-offset-md-5">
+    <H3 class="ml-5 font-weight-bolder"><b>NEWS&EVENT</b></H3>
+    </p>
+</div>
+
+<div class="border border-top-0 border-bottom-0 border-right-0 border-secondary ml-5 ">
+    <img src="./image/pic5.jpg" alt="" class="img-fluid ml-3" width=500>
+    <h6 class="ml-3"><b>A1 Online Orders</b> </h6>
+    <p class="ml-3">dear customers,Considering your convinient and for easy <br> shopping our A1 CHIPS Online Order is changed to <br> www.buya1chips.com. Thanks for support....</p>
+</div>
+<button type="button" class="btn btn-danger ml-5 border border-rounded rounded-pill ">View more</button>
+</div>
+</div>
+<div class="row mb-3">
+    <div>
+        <img src="./image/mockup1.png" alt="">
+    </div>
+</div>
+<footer>
+    <div class="row bg-dark text-white col-md-12">
+        <div class="col-md-3 ">
+            <h6 class="font-weight-bolder ml-5 mt-4">GET IN TOUCH</h6>
+            <p class="ml-5 mt-4 text-secondary"><span><i class="material-icons " style="color: rgb(255, 0, 0);">location_on</i></span> A1 CHIPS & EXPORTS INDIA 117, VR Residency, Chokkampudur Road, Krishna Nagar, Coimbatore- 641001, Tamilnadu, India.
+            </p>
+            <p class="ml-5 text-secondary"><span><i class="material-icons " style="color: rgb(255, 0, 0);">phone</i></span> +91-422-2477-461</p>
+            <p class="ml-5 text-secondary"><span><i class="material-icons  " style="color: rgb(255, 0, 0);">mail</i></span> info@a1chips.in</p>
+        </div>
+        <div class="col-md-3">
+            <h6 class="font-weight-bolder ml-5 mt-4">SUBSCRIBE A NEWS LETTER</h6>
+            <form action="">
+                <div class="input-group mt-4 ">
+                    <input type="text" class="form-control  border border-rounded rounded-pill " placeholder="Email id" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                    <div class="input-group-append">
+                        <span class="input-group-text border border-rounded rounded-pill btn btn-danger" id="basic-addon2">go</span>
+                    </div>
+                </div>
+            </form>
+            <button type="button" class="btn btn-danger mt-5 ml-5 border border-rounded rounded-pill"> <small><b> GET OUR LOCATION</b></small></button>
+        </div>
+        <div class="col-md-3">
+            <h6 class="font-weight-bolder  mt-4" style="margin-left: 5rem;">INFORMATION</h6>
+            <ul class=" mt-4 text-secondary">
+                <ol>>Home</ol>
+                <ol>>About us</ol>
+                <ol>>Category
+                </ol>
+                <ol>>Upcoming events</ol>
+                <ol>>Reviews</ol>
+                <ol>>Feedback</ol>
+            </ul>
+        </div>
+        <div class="col-md-3">
+            <h6 class="font-weight-bolder ml-5 mt-4">FOLLOW US</h6>
+            <img src="./image/unnamed.png" alt="" width="80%" class="mt-4">
+        </div>
+        <hr class="text-white">
+        <small class=" ml-5 container text-center">© 2021 A1Chips & Exports India Pvt. Ltd. All Rights Reserved.</small>
+    </div>
+
+</footer>
+
+</body>
+
+</html>

@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Upeventio</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <!-- Bootstrap CSS -->
+
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body id="main">
+
+
+
+
+    <div class="header">
+        <nav class="navbar navbar-expand-lg " id="nav">
+            <a class="navbar-brand"><img src="./images/icon1.jpeg" class="mt-4 img-thumbnail ml-5" alt="" height="100rem" width="100rem"> </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon "></span>
+        </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link  ml-5" href="./index.html">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link  ml-5" href="./events.html">Events</a> <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link  ml-5" href="./login.html">LogIn</a> <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link  ml-5" href="#">Contact</a> <span class="sr-only">(current)</span></a>
+                    </li>
+                </ul>
+                <form class="form-inline col-md-4">
+                    <input class="form-control mr-lg-2 mt-3 mr-5 col-md-7" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-danger  mt-3 mr-5 " style="background-color: rgb(245, 13, 83);color: ghostwhite;" type="submit">Search</button>
+                </form>
+            </div>
+
+        </nav>
+        <div class="progress-container">
+            <div class="progress-bar" id="myBar"></div>
+        </div>
+    </div>
+    <!--      
+      <div class="container-fluid col-sm-auto col-sm-12  mt-2 " ><div class="ml-5">
+        <img src="./images/529-5293589_web-design-vector-png-clipart.png"height="600px" width="1200px"class="ml-5 col-offset-5  " alt=""></div>
+      </div>
+       -->
+    <br><br><br><br><br>
+    <div class="loginpage">
+        <div class="content">
+            <div class=" container border border-danger rounded">
+                <br><br>
+
+                <div class="row mt-5  ">
+                    <div class="col-md-6 ">
+                        <div class="border rounded-left border-light offset-4" id="loginup">
+                            <div class="col-md-12 offset-md-3 mt-5">
+                                <h1 class="text-primary">LogIn</h1>
+                            </div>
+                            <p class="col-md-8 offset-md-3 mt-3 text-light">Already having an account?Need to just login in..</p>
+                            <button data-toggle="modal" data-target="#mymodal" class="  offset-md-6 mt-2 mb-4 btn btn-primary popup" id="loginbtn" onclick="login()">LogIn</button>
+
+                        </div>
+                    </div>
+                    <div class="col-md-5">
+                        <div class="border rounded-right border-light offset-2" id="signinup">
+                            <div class="col-md-12  mt-5">
+                                <h1 class="text-primary">SignUp</h1>
+                                <p class="mt-3 text-light ml-2">New User?Need to try it..</p>
+                                <button data-toggle="modal" data-target="#mymodal1" class=" btn btn-danger ml-5 text-light" id="SignUpbtn">SignUp</button>
+                                <br><br><br><br>
+                            </div>
+                        </div>
+                    </div>
+                    <br><br><br><br><br><br><br><br><br><br><br><br><br>
+                </div>
+            </div>
+
+            <div class="modal" id="mymodal">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+
+                            <h1 class="modal-title text-primary">Login</h1>
+                            <button class="close" type="button" data-dismiss="modal">x</button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="loginBox "> <img class="user offset-md-4 rounded-circle border border-dark" src="./images/logo.png" height="100px" width="100px">
+                                <h3>Login Here</h3>
+                                <form action="login.php" method="post">
+                                    <div class="input-container ml-5 mb-3">
+                                        <i class="fa fa-user icon"></i>
+                                        <input class="input-field ml-2" type="text" placeholder="Username" name="user1">
+                                    </div>
+
+
+                                    <div class="input-container ml-5">
+                                        <i class="fa fa-key icon"></i>
+                                        <input class="input-field ml-1 " type="password" placeholder="Password" name="password1">
+                                    </div>
+
+                                    <button type="submit" class="btn btn-danger offset-4 mt-3 ">Login</button>
+
+                                </form>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal" id="mymodal1">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+
+                            <h1 class="modal-title text-primary">SignUp</h1>
+                            <button class="close" type="button" data-dismiss="modal">x</button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="loginBox "> <img class="user offset-md-4 rounded-circle border border-dark" src="./images/logo.png" height="100px" width="100px">
+                                <h3>SignUp Here</h3>
+                                <form action="login.php" name="myForm" method="post" onsubmit="validateForm()">
+                                    <div class="input-container ml-5 mb-3">
+                                        <i class="fa fa-user icon"></i>
+                                        <input class="input-field ml-2" type="text" placeholder="Register Number" minlength="7" pattern="[A-Za-z0-9_]{8}" size="30" id="user">
+                                    </div>
+                                    <div class="input-container ml-5 mb-3">
+                                        <i class="fa fa-envelope icon"></i>
+                                        <input class="input-field ml-2" type="email" placeholder="Email" pattern=".+@kongu.edu" minlength="7" size="30" id="mail">
+                                    </div>
+
+                                    <div class="input-container ml-5">
+                                        <i class="fa fa-key icon"></i>
+                                        <input class="input-field ml-1 " type="password" placeholder="Password" minlength="5" size="30" id="password">
+                                    </div>
+
+                                    <button type="submit" class="btn btn-danger offset-4 mt-3 ">SignUp</button>
+
+
+                                </form>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
+
+    <script type="text/javascript">
+        window.onload = function() {
+            document.getElementById("user").innerHTML = "";
+            document.getElementById("password").innerHTML = "";
+            document.getElementById("user1").innerHTML = "";
+            document.getElementById("password1").innerHTML = "";
+            document.getElementById("mail").innerHTML = "";
+        }
+        window.onscroll = function() {
+            myFunction()
+        };
+
+        function myFunction() {
+            var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            var scrolled = (winScroll / height) * 100;
+            document.getElementById("myBar").style.width = scrolled + "%";
+        }
+
+        function validateForm() {
+            let x = document.forms["myForm"]["user"].value;
+            if (x == "") {
+                alert("Name must be filled out");
+                return false;
+            }
+
+        }
+    </script>
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+
+</html>

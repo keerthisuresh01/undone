@@ -1,0 +1,46 @@
+#main,
+#nav {
+    background-color: black;
+    font-size: 20px;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    width: 100%;
+    background-color: #f07676;
+}
+
+.loginpage {
+    background: url("./images/kec\ \(1\).png") no-repeat;
+    background-position: center;
+}
+
+.progress-container {
+    width: 100%;
+    height: 8px;
+    background: #ccc;
+}
+
+.progress-bar {
+    height: 8px;
+    background: #04AA6D;
+    width: 0%;
+}
+
+#loginup {
+    background-color: rgba(24, 22, 14, 0.822);
+}
+
+#signinup {
+    background-color: rgba(24, 22, 14, 0.822);
+}
+
+.loginpage {
+    background-color: rgba(5, 5, 5, 0.781);
+}
+
+.modal-content {
+    background-color: rgb(5, 5, 5);
+}
